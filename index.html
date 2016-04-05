@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>account killer</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        
+        <form id="contactinfo" action="index.php" method="POST">
+            <label>First Name:<input type="text" name="firstname" id="firstname" required /></label>
+            <label>Last Name:<input type="text" name="lastname" id="lastname" required /></label>
+            <label>Business Name:<input type="text" name="businessname" id="businessname" /></label>
+            <label>Address:<input type="text" name="address" id="address" required /></label>
+            <label>City:<input type="text" name="city" id="city" required /></label>
+            <label>State:
+                <select name="state" id="state" required >
+                    <option value="co">CO</option>
+                    <option value="wi">WI</option>
+                    <option value="tx">TX</option>
+                    <option value="az">AZ</option>
+                </select>
+            </label>
+            
+            <label>Zip:<input type="number" name="zip" id="zip" required /></label>
+            
+            <label>Is certified mail?
+                <select name="certifiedmail" id="certifiedmail" required >
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </label>
+            
+            <label><textarea id="textbox" name="textarea" required ></textarea></label>
+            
+            <input type="submit" name="submit">
+        </form>
+        
+        
+    </body>
+</html>
+

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>registration page</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <form id="registration" method="post" action="registration.php">
+            <label>Email:<input type="email" id="email" name="email" required /></label>
+            <label>Password:<input type="password" id="password" name="password1" required /></label>
+            <label>Confirm password:<input type="password" name="password2" id="passwordconfirmation" required /></label>
+            <input type="submit" name="submit">
+<!--            detect if user is already logged in, if so redirect them to dashboard
+            detect if user already exists, if so show link to forgot password-->
+            
+            
+        </form>
+    </body>
+</html>
