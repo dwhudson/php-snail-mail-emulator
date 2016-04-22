@@ -1,10 +1,8 @@
 <?php
     session_start();
-
-$link = mysqli_connect("localhost","root","4Ye^nTOs","mysql");
- 
-$loggedinuser = $_SESSION['loggedin_user'];
-
+    $loggedinuser = $_SESSION['loggedin_user'];
+    
+    $link = mysqli_connect("localhost","root","4Ye^nTOs","mysql");
     if($link === false){
        die("ERROR: Could not connect. " . mysqli_connect_error());
     }

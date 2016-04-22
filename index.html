@@ -4,37 +4,58 @@
         <title>account killer</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     </head>
     <body>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-6 col-md-4 col-md-offset-4">
+                    <form id="contactinfo" action="index.php" method="POST" class="">
+                        <div class="form-group">
+                            <label>First Name:<input type="text" name="firstname" id="firstname" required /></label>
+                        </div>
+                        <div class="form-group">
+                            <label>Last Name:<input type="text" name="lastname" id="lastname" required /></label>
+                        </div>
+                        <div class="form-group">
+                            <label>Business Name:<input type="text" name="businessname" id="businessname" /></label>
+                        </div>
+                        <div class="form-group">
+                            <label>Address:<input type="text" name="address" id="address" required /></label>
+                        </div>
+                        <div class="form-group">
+                            <label>City:<input type="text" name="city" id="city" required /></label>
+                        </div>
+                        <div class="form-group">
+                            <label>State:
+                                <select name="state" id="state" class="selectpicker" required >
+                                    <option value="co">CO</option>
+                                    <option value="wi">WI</option>
+                                    <option value="tx">TX</option>
+                                    <option value="az">AZ</option>
+                                </select>
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label>Zip:<input type="number" name="zip" id="zip" required /></label>
+                        </div>
+                        <div class="form-group">
+                            <label>Is certified mail?
+                                <select name="certifiedmail" id="certifiedmail" class="selectpicker" required >
+                                    <option value="yes">Yes</option>
+                                    <option value="no">No</option>
+                                </select>
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label><textarea id="textbox" name="textarea" required ></textarea></label>
+                        </div>
+                        <input type="submit" class="btn btn-default" name="submit">
+                    </form>
+                </div>
+            </div>
+        </div>
         
-        <form id="contactinfo" action="index.php" method="POST">
-            <label>First Name:<input type="text" name="firstname" id="firstname" required /></label>
-            <label>Last Name:<input type="text" name="lastname" id="lastname" required /></label>
-            <label>Business Name:<input type="text" name="businessname" id="businessname" /></label>
-            <label>Address:<input type="text" name="address" id="address" required /></label>
-            <label>City:<input type="text" name="city" id="city" required /></label>
-            <label>State:
-                <select name="state" id="state" required >
-                    <option value="co">CO</option>
-                    <option value="wi">WI</option>
-                    <option value="tx">TX</option>
-                    <option value="az">AZ</option>
-                </select>
-            </label>
-            
-            <label>Zip:<input type="number" name="zip" id="zip" required /></label>
-            
-            <label>Is certified mail?
-                <select name="certifiedmail" id="certifiedmail" required >
-                    <option value="yes">Yes</option>
-                    <option value="no">No</option>
-                </select>
-            </label>
-            
-            <label><textarea id="textbox" name="textarea" required ></textarea></label>
-            
-            <input type="submit" name="submit">
-        </form>
         
         
     </body>

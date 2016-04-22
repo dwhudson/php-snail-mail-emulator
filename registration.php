@@ -7,45 +7,42 @@
         die("ERROR: Could not connect. " . mysqli_connect_error());
     }
     
-    $email_address = mysqli_real_escape_string($link, $_POST['email']); //filter_input(INPUT_POST, 'email')
+    
+   // echo "email ". $email_address;
+    /*
+    if(filter_var($email_address, FILTER_VALIDATE_EMAIL)) {
+        echo "$email_address is valid email ";
+    } else {
+        echo "$email_address is not valid!";
+    }
+    */
+    $email_address = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
+    //preg_match() could be used here in addition to regex
     $password1 = mysqli_real_escape_string($link, $_POST['password1']);
     $password2 = mysqli_real_escape_string($link, $_POST['password2']);
     
     $updateUser = "UPDATE members SET email = '$email_address', password1 = '$password1', password2 = '$password2' WHERE id = '$lastIdInsert' ";
     $userExists = "SELECT * FROM members WHERE email = '$email_address' ";
+    
     $result = mysqli_query($link, $userExists);
+    //echo "result: ". $result;
     $count = mysqli_num_rows($result);
-    
-   // $sql = "INSERT INTO members (email, password1, password2) VALUES ('$email_address','$password1','$password2')";
-    
+   // echo "count" . $count;
     $_SESSION['loggedin_user'] = $email_address;  
     
     if(isset($_POST['submit'])) {
-        if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == 1) {
+        
+        if($count > 0) {
+            echo "User already exists in db! <a href='forgotpassword.html'>forgot password</a>";
+        } else if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == 1 && $_SESSION['loggedin_user'] === $email_address) {
             header("Location: dashboard.html");
             exit;
-        } else if($count > 0) {
-            echo "User already exists in db! <a href='forgotpassword.html'>forgot password</a>";
-        } else if($_POST["password1"] == $_POST["password2"]) {
-            
+        } else { 
+            //($_POST["password1"] == $_POST["password2"]) {    
             mysqli_query($link, $updateUser);
-            
-            /*
-            if(mysqli_query($link, $updateUser)){
-                echo "Records added successfully.";
-            } else{
-                echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
-            }
-            */
             header("Location:login.html");
             exit;
-            
-        } else {
-            echo "Didn't account for this scenario!";
         }
-        
-        
-   
         
     }
     

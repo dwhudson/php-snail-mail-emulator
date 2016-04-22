@@ -9,17 +9,21 @@ and open the template in the editor.
         <title>registration page</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     </head>
     <body>
-        <form id="registration" method="post" action="registration.php">
-            <label>Email:<input type="email" id="email" name="email" required /></label>
-            <label>Password:<input type="password" id="password" name="password1" required /></label>
-            <label>Confirm password:<input type="password" name="password2" id="passwordconfirmation" required /></label>
-            <input type="submit" name="submit">
-<!--            detect if user is already logged in, if so redirect them to dashboard
-            detect if user already exists, if so show link to forgot password-->
-            
-            
+        <form id="registration" method="post" action="registration.php" class="">
+            <div class="form-group">
+                <label>Email:<input type="email" id="email" name="email" required /></label>
+            </div>
+            <div class="form-group">
+                <label>Password:<input type="password" id="password" name="password1" required /></label>
+            </div>
+            <div class="form-group">
+                <label>Confirm password:<input type="password" name="password2" id="passwordconfirmation" required /></label>
+            </div>
+            <input type="submit" class="btn btn-default" name="submit">
+
         </form>
     </body>
 </html>
